@@ -11,20 +11,22 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity
 {
-
+    // VARIABLES
+    // Edit Texts
     EditText etMin;
     EditText etMax;
 
+    // Text Views
     TextView tvOutput;
 
-
+    // Buttons
     Button btnGenerate;
 
+    // Other
     Random r;
     int min;
     int max;
     int output;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // TYPE CASTING
         r = new Random();
 
         etMin = findViewById(R.id.etMin);
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity
         min = Integer.parseInt(etMin.getText().toString());
         max = Integer.parseInt(etMax.getText().toString());
 
+        // WORK ----------------------------------------------------------
         output = r.nextInt((max - min) + 1) + min;
 
         tvOutput.setText("" + output);
